@@ -1,2 +1,70 @@
-@import "../../sass/hamburgers.scss";
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script:700|Montserrat:300,700);
+
+@import "../../scss/hamburgers.scss";
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
+
+$text-font:		'Montserrat', sans-serif;
+$header-font: 	'Dancing Script', serif;
+
+html, body {
+	font-size: 14px;
+	color: #000;
+	font-family: $text-font;
+	font-weight: 300;
+	line-height: 2;
+}
+
+h1 {
+	font-family: $header-font;
+	font-weight: 700;
+	color: #C2BFB6;
+	font-size: 6rem;
+
+	@include media-breakpoint-up(md) {
+		font-size: 8rem;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 10rem;
+	}
+}
+
+h3 {
+	font-family: $text-font;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 1.1em;
+
+	@include media-breakpoint-up(md) {
+		font-size: 1.3em;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 1.4em;
+	}
+}
+
+.title {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+
+	@include media-breakpoint-up(md) {
+		margin-top: 5em;
+		margin-bottom: 5em;
+	}
+
+	h3 {
+		margin-top: .5em;
+	}
+}
+
+.intro {
+	text-align: center;
+	font-size: 1.2em;
+
+	@include media-breakpoint-up(md) {
+		font-size: 1.4em;
+	}
+}

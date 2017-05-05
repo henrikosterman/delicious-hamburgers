@@ -5,7 +5,13 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     gulpSequence = require('gulp-sequence'),
     clean = require('gulp-clean'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     autoprefixer = require('gulp-autoprefixer');
+
+var config = {
+    bowerDir: './bower_components',
+}
 
 gulp.task('clean', function() {
     return gulp.src('dist', {read: false})
@@ -24,20 +30,44 @@ gulp.task('css', function() {
 
 gulp.task('watch', function (callback) {
     gulpSequence('build')(callback);
-    gulp.watch('scss/**/*.scss', ['build'])
+    gulp.watch('scss/**/*.scss', ['build']);
 });
 
 gulp.task('build', function(callback) {
     gulpSequence('clean', ['css'])(callback);
 });
 
+gulp.task('default', ['build']);
+
+// GitHub Pages
 gulp.task('gh-pages', function(callback) {
+    gulpSequence('gh-pages-build')(callback);
+    gulp.watch('gh-pages/**/*.scss', ['gh-pages-css']);
+    gulp.watch('gh-pages/**/*.js', ['gh-pages-js']);
+});
+
+gulp.task('gh-pages-build', function(callback) {
+    gulpSequence('clean', ['gh-pages-css', 'gh-pages-js'])(callback);
+});
+
+gulp.task('gh-pages-css', function() {
     return gulp.src('gh-pages/scss/main.scss')
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(autoprefixer('last 5 versions'))
         .pipe(rename({suffix: '.min'}))
         .pipe(sass({outputStyle: 'compressed'}))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['build']);
+gulp.task('gh-pages-js', function() {
+    return gulp.src([
+            config.bowerDir + '/jquery/dist/jquery.js', 
+            // config.bowerDir + '/tether/dist/js/tether.js', 
+            // config.bowerDir + '/bootstrap/dist/js/bootstrap.js', 
+            'gh-pages/**/*.js'
+        ])
+        .pipe(concat('main.js'))
+        .pipe(rename('main.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'));
+});
