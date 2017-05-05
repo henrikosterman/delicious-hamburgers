@@ -31,4 +31,13 @@ gulp.task('build', function(callback) {
     gulpSequence('clean', ['css'])(callback);
 });
 
+gulp.task('gh-pages', function(callback) {
+    return gulp.src('gh-pages/scss/main.scss')
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        .pipe(autoprefixer('last 5 versions'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(gulp.dest('dist'))
+});
+
 gulp.task('default', ['build']);
