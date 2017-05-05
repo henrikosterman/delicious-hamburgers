@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/delicious-hamburgers.svg)](https://www.npmjs.com/package/delicious-hamburgers)
 [![Build Status](https://travis-ci.org/kapoko/delicious-hamburgers.svg?branch=master)](https://travis-ci.org/kapoko/delicious-hamburgers)
 
-Beautiful hamburger menu buttons with pure CSS animations, customizable with SASS.
+Beautiful hamburger menu buttons with pure CSS animations, customisable with SASS.
 
 ## Usage
 
@@ -76,14 +76,14 @@ hamburger--stack
 hamburger--twist
 ```
 
-## Customization
+## Customisation
 
 ### How-to 
 
-With the power of SASS you can customize the buttons to fit your project even better. Declare your variables before including `hamburgers.scss`, only then they will override the default values. Like so: 
+With the power of SASS you can customise the buttons to fit your project even better. Declare your variables before including `hamburgers.scss`, only then they will override the default values. Like so: 
 
 ```sass
-$hamburger-color:       #fff;
+$hamburger-color:               #fff;
 
 @import "~delicious-hamburgers/sass/hamburgers";
 ```
@@ -107,6 +107,21 @@ $hamburger-color:               #000;
 ```sass
 $hamburger-color-active:        $hamburger-color;
 ```
+```sass
+$hamburger-background:          transparent !default;
+```
+```sass
+$hamburger-background-active:   $hamburger-background !default;
+```
+```sass
+$hamburger-border-color:        transparent !default;
+```
+```sass
+$hamburger-border-width:        0 !default;
+```
+
+> <sup>Note: the border will always act like it's inset, even if you use a `div` element. I wanted to keep consistency between the `button` and `div` element, which normally react differently to a border. If you're using a `div` element, changing this won't affect the real size of the button.</sup>
+
 ```sass
 $hamburger-opacity:             1;
 ```
