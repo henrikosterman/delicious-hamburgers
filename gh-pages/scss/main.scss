@@ -142,8 +142,61 @@ a {
 }
 
 .fun-stuff {
-	text-align: right;
 	font-size: 1em;
+	margin-bottom: 1em;
+	text-align: center;
 
 	@include nice-middot();
+
+	@include media-breakpoint-up(sm) {
+		text-align: right;
+	}
+}
+
+footer {
+	margin-top: 7em;
+	text-align: center;
+
+	.background {
+		background-color: #fafafa;
+	}
+
+	p {
+		font-size: 1.2em;
+		
+		@include media-breakpoint-up(md) {
+			font-size: 1.4em;
+		}
+	}
+
+	h3 {
+		color: $color-primary;
+		margin-bottom: 1em;
+	}
+
+	a.npm {
+		border-bottom: 0;
+	}
+
+	.content {
+		padding-top: 5em;
+		padding-bottom: 5em;
+	}
+}
+
+.copyright {
+	@include nice-middot();
+	text-align: center;
+
+	p {
+		font-size: 1em;
+		color: $color-primary;
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+	iframe {
+		position: relative;
+		top: .45em;
+	}
 }
