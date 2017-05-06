@@ -30,7 +30,7 @@ gulp.task('css', function() {
 
 gulp.task('watch', function (callback) {
     gulpSequence('build')(callback);
-    gulp.watch('scss/**/*.scss', ['build']);
+    gulp.watch('scss/**/*.scss', ['build'])
 });
 
 gulp.task('build', function(callback) {
