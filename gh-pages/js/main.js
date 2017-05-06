@@ -20,4 +20,24 @@ $(function() {
 			$(this).toggleClass('active');
 		});
 	});
+
+	/*
+	 * Little show for creating the gif
+	 */
+	/*
+	var count = 0;
+	setTimeout(function() {
+		setInterval(function() {
+			var $thisburger = $('button.hamburger').eq(count);
+
+			$thisburger.toggleClass('active');
+
+			setTimeout(function() {
+				$thisburger.toggleClass('active');
+			}, 1200);
+
+			count++;
+		}, 500);
+	}, 1000);
+	*/ 
 });
