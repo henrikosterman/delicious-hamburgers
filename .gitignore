@@ -1,8 +1,4 @@
-# macOS
+_site
+.sass-cache
+.jekyll-metadata
 .DS_Store
-
-# NPM & Bower
-node_modules/
-bower_components/
-
-*.sublime-workspace

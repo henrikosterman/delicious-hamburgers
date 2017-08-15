@@ -1,0 +1,14 @@
+$hamburger-size:    60px;
+$fa-font-path:      "../bower_components/components-font-awesome/fonts";
+
+@import "../scss/hamburgers.scss";
+@import "../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../bower_components/components-font-awesome/scss/font-awesome.scss";
+
+$text-font:         'Montserrat', sans-serif;
+$header-font:       'Dancing Script', serif;
+$color-primary:     #C2BFB6;
+
+@import "gh-pages/global";
+@import "gh-pages/sections";
+@import "gh-pages/footer";
