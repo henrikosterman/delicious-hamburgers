@@ -18,7 +18,7 @@ author: Kasper Koman
 email: kasper.koman@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Beautiful hamburger menu buttons animated in pure CSS, customisable with Sass
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/delicious-hamburgers" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
@@ -39,6 +39,7 @@ assets:
     - _assets/scss
     - _assets/js
     - _assets/bower
+  prefix: "/assets"
   autoprefixer:
     browsers:
       - "last 5 versions"
