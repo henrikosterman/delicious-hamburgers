@@ -1,0 +1,26 @@
+<section id="menu" class="row">
+    <div class="col-12"> 
+        <h3 class="section-title">The Menu</h3>
+    </div>
+
+    {% for hamburger in site.data.hamburgers %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 item">
+            <div class="frame">
+                <button class="hamburger hamburger--{{ hamburger.class }}">
+                    <div class="inner">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+                <h3>{{ hamburger.title }}</h3>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="col-12 fun-stuff">
+        <a href="#" id="reset">Reset</a>
+        <span>&middot;</span>
+        <a href="#" id="toggle-all">Toggle all</a>
+    </div>
+</section>
