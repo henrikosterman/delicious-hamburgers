@@ -7,7 +7,6 @@ node_modules
 bower_components
 
 # Jekyll
-_site
 _assets
 .sass-cache
 .asset-cache
