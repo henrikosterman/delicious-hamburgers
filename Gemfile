@@ -16,7 +16,12 @@ gem "jekyll", "3.5.2"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   gem "jekyll-feed", "~> 0.6"
+    gem "jekyll-feed", "~> 0.6"
+    gem "jekyll-assets"
+    gem "uglifier"
+    gem "sass"
+    gem "autoprefixer-rails"
+    gem "font-awesome-sass"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

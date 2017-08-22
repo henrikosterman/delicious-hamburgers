@@ -1,0 +1,44 @@
+section {
+    text-align: center;
+    margin-top: 1em; 
+
+    .section-title {
+        margin-top: 1em;
+        margin-bottom: 3em;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-top: 3em;
+    }
+
+    .item {
+        margin-bottom: 30px;
+
+        .frame {
+            padding: 3em 5px 2em 5px;
+            border: 2px #000 solid; 
+
+            @include media-breakpoint-down(xs) {
+                margin-right: 15px;
+                margin-left: 15px;
+            }
+
+            h3 {
+                font-size: 1em;
+                margin-top: 2em;
+            }
+        }
+    }
+}
+
+.fun-stuff {
+    font-size: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+
+    @include nice-middot();
+
+    @include media-breakpoint-up(sm) {
+        text-align: right;
+    }
+}

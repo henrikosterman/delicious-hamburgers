@@ -25,8 +25,23 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-assets
 exclude: [bower_components, node_modules, scss, "*.sublime-project", LICENSE, bower.json]
 keep_files: [bower_components/components-font-awesome/fonts]
+sass:
+  style: compressed
+assets:
+  digest: true
+  compress:
+    css: true
+    js: true
+  sources:
+    - _assets/scss
+    - _assets/js
+    - _assets/bower
+  autoprefixer:
+    browsers:
+      - "last 5 versions"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
