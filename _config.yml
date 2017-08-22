@@ -26,7 +26,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-assets
-exclude: [bower_components, node_modules, scss, "*.sublime-project", LICENSE, bower.json]
+exclude: [bower_components, node_modules, scss, "*.sublime-project", LICENSE, bower.json, README.md, Gemfile, Gemfile.lock, index.js, gulpfile.js, package.json, package-lock.json]
 keep_files: [bower_components/components-font-awesome/fonts]
 sass:
   style: compressed
